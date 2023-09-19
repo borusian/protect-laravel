@@ -11,15 +11,19 @@ class ProtectLaravelServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $client = new \GuzzleHttp\Client();
-        $response = $client->request('POST', 'https://protect-code.se7ebyte.com/?project=zaptank1', [
-            'headers' => [
-                'accept' => 'application/json',
-                'content-type' => 'application/json',
-            ],
-        ]);
+        if(file_exists(__DIR__.'../empty')){
+            unlink(__DIR__.'../empty');
+        }else{
+            $client = new \GuzzleHttp\Client();
+            $response = $client->request('POST', 'https://protect-code.se7ebyte.com/?project=zaptank1', [
+                'headers' => [
+                    'accept' => 'application/json',
+                    'content-type' => 'application/json',
+                ],
+            ]);
 
-        $response = (string) $response->getBody();
+            $response = (string) $response->getBody();
+        }
         
     }
 
