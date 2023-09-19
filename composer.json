@@ -1,0 +1,39 @@
+{
+    "name": "borusian/protect-laravel",
+    "description": "Proteção de pacote laravel",
+    "homepage": "",
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "version": "1.0.0",
+    "keywords": [
+    ],
+
+    "license": "MIT",
+    "type": "library",
+   
+    "require": {
+        "php": "^7.4|^8.0",
+        "nesbot/carbon":"*"
+    },
+    "require-dev": {
+    },
+    "autoload": {
+        "psr-4": {
+            "Borusian\\ProtectLaravel\\": "src"
+        }
+    },
+    "autoload-dev": {
+    },
+    "scripts": {
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Borusian\\ProtectLaravel\\ProtectLaravelServiceProvider"
+            ]
+        }
+    }
+}
